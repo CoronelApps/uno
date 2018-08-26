@@ -1,0 +1,39 @@
+<!-- Floating Multiline Textfield -->
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--1-col">1</div>
+  <div class="mdl-cell mdl-cell--7-col">
+    <form action="#">
+      <div class="mdl-textfield mdl-js-textfield">
+        <input #name (keyup)="0" class="mdl-textfield__input" type="text" id="sample1">
+        <label class="mdl-textfield__label" for="sample1">Test Case Name</label>
+      </div>
+      <div>
+        <textarea #step (keyup)="0" class="mdl-textfield__input" type="text" rows="2" id="sample5"></textarea>
+      </div>
+      <div>
+        <textarea class="mdl-textfield__input" type="text" rows="2" id="sample6"></textarea>
+      </div>
+    </form>
+    <div style="float: right;">
+        <button id="back" (click)="destroy()" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+          <i class="material-icons">arrow_back</i>
+        </button>
+        <div class="mdl-tooltip mdl-tooltip--large" for="back">
+          Previous Step
+        </div>
+        <button id="next" (click)="onClickMe()" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+          <i class="material-icons">arrow_forward</i>
+        </button>
+        <div class="mdl-tooltip mdl-tooltip--large" for="next">
+          Next Step
+        </div>
+      </div>
+  </div>
+  <div id="stepsContainer" class="mdl-cell mdl-cell--4-col">
+    <div>{{clickMessage}}
+      <h4>{{name.value}}</h4>
+    </div>
+    <app-step></app-step>
+    <ng-template #appStep></ng-template>
+  </div>
+</div>
