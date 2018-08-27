@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+.active {
+    background-color: rgba(156, 39, 176, 0.12);
+    padding: 5px;
+}
+.step{
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+.expected{
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.sticky {
+    position: fixed;
+  }
+  .notsticky {
+    position: absolute;
+    right: 0px;
+    padding: 8px;
+  }

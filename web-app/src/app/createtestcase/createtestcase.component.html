@@ -1,39 +1,59 @@
 <!-- Floating Multiline Textfield -->
-<div class="mdl-grid">
-  <div class="mdl-cell mdl-cell--1-col">1</div>
-  <div class="mdl-cell mdl-cell--7-col">
-    <form action="#">
-      <div class="mdl-textfield mdl-js-textfield">
-        <input #name (keyup)="0" class="mdl-textfield__input" type="text" id="sample1">
-        <label class="mdl-textfield__label" for="sample1">Test Case Name</label>
-      </div>
-      <div>
-        <textarea #step (keyup)="0" class="mdl-textfield__input" type="text" rows="2" id="sample5"></textarea>
-      </div>
-      <div>
-        <textarea class="mdl-textfield__input" type="text" rows="2" id="sample6"></textarea>
-      </div>
-    </form>
-    <div style="float: right;">
-        <button id="back" (click)="destroy()" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-          <i class="material-icons">arrow_back</i>
-        </button>
-        <div class="mdl-tooltip mdl-tooltip--large" for="back">
-          Previous Step
-        </div>
-        <button id="next" (click)="onClickMe()" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-          <i class="material-icons">arrow_forward</i>
-        </button>
-        <div class="mdl-tooltip mdl-tooltip--large" for="next">
-          Next Step
-        </div>
-      </div>
-  </div>
-  <div id="stepsContainer" class="mdl-cell mdl-cell--4-col">
-    <div>{{clickMessage}}
-      <h4>{{name.value}}</h4>
+<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+    <div class="mdl-tabs__tab-bar">
+        <a href="#starks-panel" class="mdl-tabs__tab is-active">Test case</a>
+        <a href="#targaryens-panel" class="mdl-tabs__tab">Extras</a>
     </div>
-    <app-step></app-step>
-    <ng-template #appStep></ng-template>
+  
+    <div class="mdl-tabs__panel is-active" id="starks-panel">
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--7-col sticky" id="myHeader">
+              <form action="#">
+                <div class="mdl-textfield mdl-js-textfield">
+                  <input #name (keyup)="0" class="mdl-textfield__input" type="text" id="sample1">
+                  <label class="mdl-textfield__label" for="sample1">Test Case Name</label>
+                </div>
+                <div>
+                  <textarea class="mdl-textfield__input" type="text" rows="2" id="sample5"></textarea>
+                </div>
+                <div>
+                  <textarea class="mdl-textfield__input" type="text" rows="2" id="sample6"></textarea>
+                </div>
+              </form>
+              <div style="float: right;">
+                <button id="next" (click)="onClickMe()" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+                  <i class="material-icons">add</i>
+                </button>
+                <div class="mdl-tooltip mdl-tooltip--large" for="next">
+                  Add Step
+                </div>
+              </div>
+            </div>
+            <div id="stepsContainer" class="mdl-cell mdl-cell--5-col notsticky">
+              <!-- Always shows a header, even in smaller screens. -->
+              <div class="mdl-layout--fixed-header">
+                <header>
+                  <div class="mdl-layout__header-row" style="padding:  2px;">
+                    <!-- Title -->
+                    <span class="mdl-layout-title">{{name.value}}</span>
+                    <!-- Add spacer, to align navigation to the right -->
+                    <div class="mdl-layout-spacer"></div>
+                    <!-- Navigation. We hide it in small screens. -->
+                    <nav class="mdl-navigation mdl-layout--large-screen-only">
+                      <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="">Save</a>
+                    </nav>
+                  </div>
+                </header>
+                <app-step></app-step>
+                <ng-template #appStep></ng-template>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="mdl-tabs__panel" id="targaryens-panel">
+      <ul>
+        <li>Viserys</li>
+        <li>Daenerys</li>
+      </ul>
+    </div>
   </div>
-</div>
