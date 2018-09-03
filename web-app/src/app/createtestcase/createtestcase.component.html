@@ -9,7 +9,7 @@
         <div class="mdl-grid">
             <div class="mdl-cell mdl-cell--7-col sticky" id="myHeader">
               <form action="#">
-                <div class="mdl-textfield mdl-js-textfield">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <input #name (keyup)="0" class="mdl-textfield__input" type="text" id="sample1">
                   <label class="mdl-textfield__label" for="sample1">Test Case Name</label>
                 </div>
@@ -50,10 +50,7 @@
             </div>
           </div>
     </div>
-    <div class="mdl-tabs__panel" id="targaryens-panel">
-      <ul>
-        <li>Viserys</li>
-        <li>Daenerys</li>
-      </ul>
+    <div class="mdl-tabs__panel mdl-color--grey-200" id="targaryens-panel">
+      <app-extras></app-extras>
     </div>
   </div>

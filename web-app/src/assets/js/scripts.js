@@ -27,13 +27,36 @@ $(document).ready(function () {
     })
 
     $(".CodeMirror.cm-s-paper.CodeMirror-wrap").keyup(function () {
-        $(".step.active").html("<strong>Description:</strong>" + stepEditor.markdown(stepEditor.value()));
+        $(".step.active").html("<strong>Conditions:</strong>" + stepEditor.markdown(stepEditor.value()));
     });
 
     $(".CodeMirror.cm-s-paper.CodeMirror-wrap:eq( 1 )").keyup(function () {
-        $(".expected.active").html("<strong>Expected:</strong>" + stepEditor.markdown(expectedEditor.value()));
+        $(".expected.active").html("<strong>Expected Results:</strong>" + stepEditor.markdown(expectedEditor.value()));
     }); 
 });
+
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+  var data = google.visualization.arrayToDataTable([
+    ['Task', 'Hours per Day'],
+    ['Work',     11],
+    ['Eat',      2],
+    ['Commute',  2],
+    ['Watch TV', 2],
+    ['Sleep',    7]
+  ]);
+
+  var options = {
+    title: 'My Daily Activities'
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+  chart.draw(data, options);
+}
 
 
 

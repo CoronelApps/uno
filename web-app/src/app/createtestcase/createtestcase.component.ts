@@ -10,6 +10,9 @@ import { StepcontainerComponent} from '../smallcomponents/stepcontainer/stepcont
 export class CreatetestcaseComponent implements OnInit {
   @ViewChild("appStep", { read: ViewContainerRef }) stepsContainer;
   stepComponentFactory: ComponentFactory<StepComponent>;
+  stepIdCounter: number = 2;
+  expectedIdCounter: number = 2;
+  stepNumberCounter: number = 2;
 
   constructor(public viewContainerRef: ViewContainerRef, private componentFactoryResolver: ComponentFactoryResolver) { }
 
@@ -18,7 +21,10 @@ export class CreatetestcaseComponent implements OnInit {
   }
  
   onClickMe() {
-    this.stepsContainer.createComponent(this.stepComponentFactory);
+    var viewContainerRef = this.stepsContainer.createComponent(this.stepComponentFactory);
+    viewContainerRef.instance.stepId = this.stepIdCounter ++;
+    viewContainerRef.instance.expectedId = this.expectedIdCounter ++;
+    viewContainerRef.instance.stepNumber = this.stepNumberCounter ++;
   }
 
 }

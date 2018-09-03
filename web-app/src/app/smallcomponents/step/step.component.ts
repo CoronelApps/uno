@@ -6,19 +6,28 @@ import { Component, OnInit, Input , ComponentFactoryResolver} from '@angular/cor
   styleUrls: ['./step.component.css']
 })
 export class StepComponent implements OnInit {
-   stepId = 0;
-   expectedId = 0;
-   stepNumber = 0;
+   stepId : number = 1;
+   expectedId : number = 1;
+   stepNumber : number = 1;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) {
     
    }
 
-
   ngOnInit() {
-    /*this.stepId = this.stepId + 1;
-    this.expectedId += 1;
-    this.stepNumber += 1;*/
+
+  }
+
+  increment() {
+    this.stepId++;
+    this.expectedId++;
+    this.stepNumber++;
+  }
+
+  decrement() {
+    this.stepId--;
+    this.expectedId--;
+    this.stepNumber--;
   }
 
 }

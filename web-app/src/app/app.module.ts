@@ -10,6 +10,8 @@ import { TestcasesComponent } from './testcases/testcases.component';
 import { CreatetestcaseComponent } from './createtestcase/createtestcase.component';
 import { StepComponent } from './smallcomponents/step/step.component';
 import { StepcontainerComponent } from './smallcomponents/stepcontainer/stepcontainer.component';
+import { ExtrasComponent } from './smallcomponents/extras/extras.component';
+import { ChipsComponent } from './smallcomponents/chips/chips.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { StepcontainerComponent } from './smallcomponents/stepcontainer/stepcont
     CreatetestcaseComponent,
     StepComponent,
     StepcontainerComponent,
+    ExtrasComponent,
+    ChipsComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +32,6 @@ import { StepcontainerComponent } from './smallcomponents/stepcontainer/stepcont
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [StepComponent]
+  entryComponents: [StepComponent, ChipsComponent]
 })
 export class AppModule { }
