@@ -1,20 +1,23 @@
 <div class="mdl-grid">
-  <div class="mdl-cell mdl-cell--3-col">2</div>
+  <div class="mdl-cell mdl-cell--3-col"></div>
   <div class="mdl-cell mdl-cell--6-col">
 
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
-        <label class="mdl-textfield__label" for="sample5">Test Case Description</label>
-      </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <textarea class="mdl-textfield__input" type="text" rows="5" id="tcDescription"></textarea>
+      <label class="mdl-textfield__label" for="tcDescription">Test Case Description</label>
+    </div>
     <div>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input #chipInput (keydown)="addChip($event)" class="mdl-textfield__input" type="text" id="sample3">
+        <input #chipInput (keydown)="addChip($event)" (keyup)="searchChips()" class="mdl-textfield__input" type="text" id="sample3">
         <label class="mdl-textfield__label" for="sample3">Aditional info...</label>
+        <div #chipControl></div>
       </div>
+      <button id="tt2" href="testcases/new" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+        <i class="material-icons">help</i></button>
     </div>
-    <div style="border: 1px solid rgb(124,77,255); border-radius: 15px;padding:  8px;">
-        <ng-template #chips></ng-template>
+    <div #chipContainer id="chipContainer" style="border: 1px solid rgb(124,77,255); border-radius: 15px;padding:  8px; display: none;">
+      <ng-template #chips></ng-template>
     </div>
   </div>
-  <div class="mdl-cell mdl-cell--3-col">2</div>
+  <div id="help" class="mdl-cell mdl-cell--3-col"></div>
 </div>

@@ -42,17 +42,22 @@
     <div class="mdl-layout__drawer">
       <span class="mdl-layout-title">Menu</span>
       <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="/testcases">Test Cases <button id="tt2" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+        <div class="mdl-navigation__link">
+        <a style="text-decoration: none;" href="/testcases">Test Cases <a id="newTestCase" href="/testcases/new" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
             <i class="material-icons">add</i>
-          </button></a>
-        <a class="mdl-navigation__link" href="">Test Executions <button id="tt2" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+        </a></a></div>
+        <div class="mdl-navigation__link">
+        <a style="text-decoration: none;"  href="">Test Executions <a id="newExecution" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
             <i class="material-icons">play_circle_filled</i>
-          </button></a>
-        <a class="mdl-navigation__link" href="">Reports</a>
+        </a></a></div>
+        <div class="mdl-navigation__link">
+            <a style="text-decoration: none;"  href="">Reports <a id="newExecution" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                <i class="material-icons">add</i>
+        </a></a></div>
         <a class="mdl-navigation__link" href="">Settings</a>
       </nav>
     </div>
-    <main class="mdl-layout__content">
+    <main class="mdl-layout__content mdl-color--grey-50">
       <div class="page-content">
         <app-root></app-root>
       </div>
